@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "entries": {
+    "frontend-design": {
+      "source": "github.com/anthropics/skills/frontend-design",
+      "type": "github-subdir",
+      "installed_at": "2026-05-11T22:15:30.251684782-07:00",
+      "repo_url": "https://github.com/anthropics/skills.git",
+      "subdir": "skills/frontend-design",
+      "version": "f458cee",
+      "tree_hash": "928950704df8a8b885c03de5da626331e6f29cf8",
+      "file_hashes": {
+        "LICENSE.txt": "sha256:0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "SKILL.md": "sha256:b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0"
+      }
+    },
+    "karpathy-guidelines": {
+      "source": "https://github.com/forrestchang/andrej-karpathy-skills.git/skills/karpathy-guidelines",
+      "type": "github-subdir",
+      "installed_at": "2026-05-11T21:45:53.986151682-07:00",
+      "repo_url": "https://github.com/forrestchang/andrej-karpathy-skills.git",
+      "subdir": "skills/karpathy-guidelines",
+      "version": "2c60614",
+      "tree_hash": "e119339197d600aa39a24fd7a95c946800c9c949",
+      "file_hashes": {
+        "SKILL.md": "sha256:6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      }
+    },
+    "kobweb-ui": {
+      "source": "github.com/OmyDaGreat/malefic-skills/kobweb-ui",
+      "type": "github-subdir",
+      "installed_at": "2026-05-11T22:10:20.617479477-07:00",
+      "repo_url": "https://github.com/OmyDaGreat/malefic-skills.git",
+      "subdir": "skills/kobweb-ui",
+      "version": "ec157dc",
+      "tree_hash": "17a09ac4abfe53b59e899a935bd894d2e962b3c5",
+      "file_hashes": {
+        "SKILL.md": "sha256:700d177c7e6f00ddc1a26e528794f066d860b02a1edea4a7c61d613fdfa42df1"
+      }
+    },
+    "skill-creator": {
+      "source": "github.com/anthropics/skills/skill-creator",
+      "type": "github-subdir",
+      "installed_at": "2026-05-11T22:16:11.541165113-07:00",
+      "repo_url": "https://github.com/anthropics/skills.git",
+      "subdir": "skills/skill-creator",
+      "version": "f458cee",
+      "tree_hash": "3cf9a8db32597ba3e24b584a3d696f4e11c7d7b6",
+      "file_hashes": {
+        "LICENSE.txt": "sha256:bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "sha256:dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+        "agents/analyzer.md": "sha256:bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a",
+        "agents/comparator.md": "sha256:fe1fc9787c495d864c5d6eada47396478572325fde1b33a96d78bf4b849b7a3e",
+        "agents/grader.md": "sha256:57134da0c1a4eea33fbd74a1c9c44aa814f07d6bc64de303edb586f941e5d21a",
+        "assets/eval_review.html": "sha256:ce477dcc74dc1c0d1d3352646a79167b5a63634e936b1019160025065974e452",
+        "eval-viewer/generate_review.py": "sha256:fc9d1b9243fe5ab6012ebd579bd76d0035de1b79fd3b969de114defab26478fb",
+        "eval-viewer/viewer.html": "sha256:a53213426ee1100441d701a3a0d49cda7a842f992d2c36463f4d3cc0258575fa",
+        "references/schemas.md": "sha256:8e8876180a8989b406a4d3edddf875b04cdfd5805cc8616686d552b11ce4455f",
+        "scripts/__init__.py": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scripts/aggregate_benchmark.py": "sha256:123ef128ea5ccc01a4b1ac212ef5567f21e9c13d3d240609780beeb3200c49aa",
+        "scripts/generate_report.py": "sha256:13df7118a3c50c83c4c3250a606d5f2b20b25a3d44cbc392b3d669ec75281453",
+        "scripts/improve_description.py": "sha256:87d864570220b699fac52da309d2d6efdb060647bfebc74f768128e646accf80",
+        "scripts/package_skill.py": "sha256:1a33059b0db1ef73375d46d513e5ea81369d2e8838c970597b0d52ddef8d1c0f",
+        "scripts/quick_validate.py": "sha256:67cf5703402013936c8fb75ad6a1afecd8841d45cc5e606b634eb05825fde365",
+        "scripts/run_eval.py": "sha256:43e3b8f80dbf69c343967ba77e268fae991d9fa3ed68b32a0ff02532cd48657f",
+        "scripts/run_loop.py": "sha256:7bd6f674203168520517eec94c55f493c0d154339b061b4d7c0f0dad187d0f21",
+        "scripts/utils.py": "sha256:3af8ae62c40c73ab712207436a0d9a981e845f25c5a7040229eb189cc8e45bb1"
+      }
+    },
+    "skillshare": {
+      "source": "https://github.com/runkids/skillshare.git/skills/skillshare",
+      "type": "github-subdir",
+      "installed_at": "2026-05-11T21:45:56.329321652-07:00",
+      "repo_url": "https://github.com/runkids/skillshare.git",
+      "subdir": "skills/skillshare",
+      "version": "56007ef",
+      "tree_hash": "97725b3566f0a8246f19f43df4f2805cd993034d",
+      "file_hashes": {
+        "SKILL.md": "sha256:abe1875cd6cc73263828b2f523d18c44059d8e7f07a676320165654d59f035b4",
+        "references/TROUBLESHOOTING.md": "sha256:14855dbd2f20ad7042941959f257c79f768d103e89e55d74d8c3b3d38f9ff5ee",
+        "references/audit.md": "sha256:85a31c32f17f39ce2baa5189a8004c6adec506e5fcf7d20378caa103b015fd5d",
+        "references/backup.md": "sha256:96e2e8d5e2d7cfb8765c2eebb4e6d733b79258de8b3d974fca8972557f7326a6",
+        "references/extras.md": "sha256:27529c7fba6335efabb38a2a5dac1c0e4a0b79d16d0188d3f98dad2068ec4bdf",
+        "references/init.md": "sha256:41d99a2a49f576e1a2354312856ccf730f8d19d4c8d35c592585d40bc2d14d82",
+        "references/install.md": "sha256:2b444bfcd211fae59421631ecd49331b4de287c311354f8ed3ca19f204d223db",
+        "references/log.md": "sha256:406e85525f53f4deaa0f48bf8b3b53db3e032b99f5a0e926c84542d51b3a3625",
+        "references/status.md": "sha256:0143c8250ecbedfa14607b82cbfb23107294b6c1e053b5726629556b7a47412c",
+        "references/sync.md": "sha256:75577dce829fda6050b3b761915b70d9aef0d6bdb3c010d2fef7b7b22e226a8e",
+        "references/targets.md": "sha256:130b0b07b17a88d4bc09af0262a6b161421946f5442295dc5bc828f95226763e",
+        "references/trash.md": "sha256:fb94aa6b71d469fa8f6b5e728fcab531b6eb010a2092389b02eaaadf3ebc98cf",
+        "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
+      }
+    },
+    "theme-factory": {
+      "source": "github.com/anthropics/skills/theme-factory",
+      "type": "github-subdir",
+      "installed_at": "2026-05-11T22:17:41.108226421-07:00",
+      "repo_url": "https://github.com/anthropics/skills.git",
+      "subdir": "skills/theme-factory",
+      "version": "f458cee",
+      "tree_hash": "e05534d132fb1b21f9917840874758e30f0a9b1a",
+      "file_hashes": {
+        "LICENSE.txt": "sha256:bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "sha256:c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+        "theme-showcase.pdf": "sha256:3e126eca9fe99088051f7cb984c97cedb31c7d9e09ce0ba5d61bd01e70a0d253",
+        "themes/arctic-frost.md": "sha256:868a75a8fb5b2a61d0f0ab87c437fe632d3cbab6371c418f06aa2816ac109ae0",
+        "themes/botanical-garden.md": "sha256:222cb8e7496abc9b75b29453c809fb9839e7e4b01fa45deecdd896b38d087765",
+        "themes/desert-rose.md": "sha256:bd065b8629be3b64655183927e248e3d892a27b8d184b009cfba89c96102744f",
+        "themes/forest-canopy.md": "sha256:ecb722efa24688e808b5bf323c334ca2349e989cfddd72ce8400ce5d4c4bd3e7",
+        "themes/golden-hour.md": "sha256:3444a00df971d3c2f06b665e21a2e9eb5d7d7d6f6281f2758773b8345776a139",
+        "themes/midnight-galaxy.md": "sha256:0e134c4c0324df41e34ac314269aa6829cd378cf3c304b31858d0cd158d2f944",
+        "themes/modern-minimalist.md": "sha256:b8bc572b75948d4df69c401af703b9262ed6820a3ceb270da30a529e92763614",
+        "themes/ocean-depths.md": "sha256:a7ad8eec85341dbfcb2665da827a4b6a4baee08ab3335ac02421f18e6b46b2e2",
+        "themes/sunset-boulevard.md": "sha256:658af11ab04be4923692571081ffb42a428141ae537703117b9236d9f8ee22a3",
+        "themes/tech-innovation.md": "sha256:183648163026dd5eeba3df5effa335b55ba333c3ee1fe215278605e55f40a52a"
+      }
+    },
+    "webapp-testing": {
+      "source": "github.com/anthropics/skills/webapp-testing",
+      "type": "github-subdir",
+      "installed_at": "2026-05-11T22:18:50.329093472-07:00",
+      "repo_url": "https://github.com/anthropics/skills.git",
+      "subdir": "skills/webapp-testing",
+      "version": "f458cee",
+      "tree_hash": "5ffb7dc66b9fd4c25c3e400a4c00da99a349b714",
+      "file_hashes": {
+        "LICENSE.txt": "sha256:bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "sha256:51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+        "examples/console_logging.py": "sha256:ea46877289acb82da7e7ce59d0bc37c8977cd57e2a006d0c88d7a1c625bf95da",
+        "examples/element_discovery.py": "sha256:d63c89604a22f8845d724e95dda45db49b1bf57c25ce0a83afbb7b8da3d402f0",
+        "examples/static_html_automation.py": "sha256:9d533aafb875ee3ab8b8ebf8f5b9003ac8d999da3d09b285cce252e623140064",
+        "scripts/with_server.py": "sha256:b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd"
+      }
+    }
+  }
+}
