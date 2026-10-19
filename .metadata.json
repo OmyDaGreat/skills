@@ -1,6 +1,11 @@
 {
   "version": 1,
   "entries": {
+    "_emilkowalski-skills": {
+      "source": "https://github.com/emilkowalski/skills.git",
+      "tracked": true,
+      "branch": "main"
+    },
     "docker-patterns": {
       "source": "github.com/affaan-m/ECC/.kiro/skills/docker-patterns",
       "type": "github-subdir",
@@ -297,26 +302,32 @@
       }
     },
     "skillshare": {
-      "source": "https://github.com/runkids/skillshare.git/skills/skillshare",
+      "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-05-30T12:08:01.39195527-07:00",
+      "installed_at": "2026-10-19T10:32:08.001380914-04:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "8df801e",
-      "tree_hash": "07ce72aab385113e9839bb1ea55c254c0a1513e2",
+      "version": "36d04b5",
+      "tree_hash": "b3034e3357d998f10bb474367b54a7346430110c",
+      "commit": "36d04b526b65f0612d88a185628b663d50d07c6a",
       "file_hashes": {
-        "SKILL.md": "sha256:eceb02caf57c48dd961b8d2476ead96266959f07e4808d1bcfcd8ec2b643808b",
-        "references/TROUBLESHOOTING.md": "sha256:14855dbd2f20ad7042941959f257c79f768d103e89e55d74d8c3b3d38f9ff5ee",
-        "references/audit.md": "sha256:85a31c32f17f39ce2baa5189a8004c6adec506e5fcf7d20378caa103b015fd5d",
-        "references/backup.md": "sha256:96e2e8d5e2d7cfb8765c2eebb4e6d733b79258de8b3d974fca8972557f7326a6",
-        "references/extras.md": "sha256:27529c7fba6335efabb38a2a5dac1c0e4a0b79d16d0188d3f98dad2068ec4bdf",
-        "references/init.md": "sha256:41d99a2a49f576e1a2354312856ccf730f8d19d4c8d35c592585d40bc2d14d82",
-        "references/install.md": "sha256:2b444bfcd211fae59421631ecd49331b4de287c311354f8ed3ca19f204d223db",
-        "references/log.md": "sha256:406e85525f53f4deaa0f48bf8b3b53db3e032b99f5a0e926c84542d51b3a3625",
-        "references/status.md": "sha256:0143c8250ecbedfa14607b82cbfb23107294b6c1e053b5726629556b7a47412c",
-        "references/sync.md": "sha256:75577dce829fda6050b3b761915b70d9aef0d6bdb3c010d2fef7b7b22e226a8e",
-        "references/targets.md": "sha256:130b0b07b17a88d4bc09af0262a6b161421946f5442295dc5bc828f95226763e",
-        "references/trash.md": "sha256:fb94aa6b71d469fa8f6b5e728fcab531b6eb010a2092389b02eaaadf3ebc98cf",
+        "SKILL.md": "sha256:f16ecdd1e2c3bdc5caf319b4192026e0bd5197ea0990cb008190d74441ce265d",
+        "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
+        "references/audit.md": "sha256:62370c47cd12258f6b60b8e06788dda937c4bd7a4d3763414ed88e3e2c39e12a",
+        "references/backup.md": "sha256:d794b66b18120cfaae0dcb3773031a08426895fd618d02393337a1eb57f98f6f",
+        "references/extras.md": "sha256:0845bb01f48b1ee6c91eee756319e301b224cec0f944b90dbee370934d0dbb57",
+        "references/hooks.md": "sha256:c5298cdc89b056ebe39c3ea0e8afe108035157c21493811c6d5e85ce0a59a1d0",
+        "references/init.md": "sha256:bd5206d3f614c6c32b1c930cc07dd93fe893bb041838af12b612f17f55af78e3",
+        "references/install.md": "sha256:8718211e1d040ba19b3eab691c6ab033972edfae0db538b552742a317a47e235",
+        "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",
+        "references/mcp.md": "sha256:a0b1e21a0e67f629397f126001bb4fe9126725a8972677970dd865ec2125b73d",
+        "references/memory-review.md": "sha256:e9fabed005f282c6702788bfe1a01aeca986184d48eadccf3ef0e9f4e465f5e3",
+        "references/native-agents.md": "sha256:352d78cb64722717b5660655978afcef3d18638669ab96e0f2325f28d563576e",
+        "references/plugins.md": "sha256:b6a631dae7144894bbe2328943f553c98ae321ca07751484cee11b13db5ad426",
+        "references/status.md": "sha256:fce04dff6e5f613aa47f1c1da8b688ac673c0af46c346ba79bc2b7e45a1cdf3e",
+        "references/sync.md": "sha256:ba3211ee47ac86fc07c42868de42fdb08e1415e7c5e7ea65fee6be8d58c0751d",
+        "references/targets.md": "sha256:14738fb5fbb3d67471c1c9c28d0162b3437c5216f24776b946c684992ef8eeb0",
+        "references/trash.md": "sha256:97f69a115db2880f936c5202c54f5fd97be33078058eae4068fd244520a4ea22",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
       }
     },
@@ -361,5 +372,12 @@
         "scripts/with_server.py": "sha256:b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd"
       }
     }
+  },
+  "audit_accepted": {
+    "_emilkowalski-skills": [
+      "4d4fa6960e238bb3e08f447b375f50d378c4085b7fc05af14e6044c9ebcb9189",
+      "6ce70706606736bd66ca28fc3dadabc453ceb8c74b1d01c8492799768505c592",
+      "db7f73163e595e6e77dd47ee0a713a4356619b3686b812a11028c4624b025a9d"
+    ]
   }
 }
