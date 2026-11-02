@@ -6,6 +6,11 @@
       "tracked": true,
       "branch": "main"
     },
+    "_kotlin-kotlin-agent-skills": {
+      "source": "https://github.com/kotlin/kotlin-agent-skills.git",
+      "tracked": true,
+      "branch": "main"
+    },
     "docker-patterns": {
       "source": "github.com/affaan-m/ECC/.kiro/skills/docker-patterns",
       "type": "github-subdir",
