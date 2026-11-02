@@ -24,7 +24,7 @@ skillshare mcp restore BACKUP_ID --no-tui            # Apply restoration; source
 skillshare mcp check --json                          # Static check: variables, commands, version pins, DNS, sync state
 skillshare mcp check --live --timeout 30s --json     # Also start/call each server: serverInfo, protocol, tools
 skillshare mcp check docs --live --accept-tools      # Accept the tool definitions docs lists now as the baseline
-skillshare mcp serve [--target NAME] [--http ADDR [--tls-cert F --tls-key F]]  # Serve skills over MCP (SEP-2640)
+skillshare mcp serve [--target NAME] [--http ADDR [--tls-cert F --tls-key F] [--http-allow-insecure]]  # Serve skills over MCP (SEP-2640)
 skillshare mcp serve --check [--target NAME]         # List skipped, editable and Executor-index skills, then exit
 ```
 
@@ -65,7 +65,7 @@ skillshare mcp serve --check [--target NAME]         # List skipped, editable an
   gateways): stdio by default, global unless `-p`. `--target NAME` applies that target's
   filters. Skipped skills (`SKILL.md` a link or not starting with frontmatter, name not matching
   its directory, description missing or over 1,024 characters, compatibility empty or over 500, over 512 files/16 MiB) are
-  listed on stderr; `--check` lists them without serving. `--http` on a non-loopback address requires `SKILLSHARE_MCP_TOKEN` and `--tls-cert`/`--tls-key` (or bind loopback behind a TLS proxy). Cross-origin browser requests to the MCP endpoint are refused.
+  listed on stderr; `--check` lists them without serving. `--http` on a non-loopback address requires `SKILLSHARE_MCP_TOKEN` and, by default, `--tls-cert`/`--tls-key` (or bind loopback behind a TLS proxy). On a trusted private network, explicitly opt in to plain HTTP with `--http-allow-insecure`; this logs a startup warning and still requires the token. Cross-origin browser requests to the MCP endpoint are refused.
   Do not connect local Agents that already sync skills; they would see each skill twice.
   Connect one with `mcp add skillshare --target CLIENT --sync -- skillshare mcp serve`, or a
   remote `url` with `bearerToken: {fromEnv: SKILLSHARE_MCP_TOKEN}`. Agents with the Skills
@@ -129,7 +129,8 @@ mcp:
 
 Client IDs: `claude`, `codex`, `cursor`, `vscode`, `opencode`, `kilocode`, `grok`,
 `antigravity`, `amp`, `claude-desktop`, `cline`, `copilot`, `factory`, `gemini`, `goose`,
-`junie`, `kiro`, `lmstudio`, `warp`, `windsurf`, `pi`, `omp`. Scope and transport support vary by
+`junie`, `kiro`, `lmstudio`, `warp`, `windsurf`, `pi`, `omp`. `--target` and `--from` also take `agy` and
+`antigravity-cli` as `antigravity`. Scope and transport support vary by
 client; the website's MCP command reference lists every native destination and limit.
 Names such as `company-docs` (letters, digits, hyphens) work across all clients.
 
@@ -186,11 +187,12 @@ setups usually go wrong.
 
 - Another account: a target with `agent:` and `config_dir: <dir>` is an MCP target by its own
   name, and `mcp import --from <name>` reads that file. `claude` (`CLAUDE_CONFIG_DIR`) writes
-  `<dir>/.claude.json`, `codex` (`CODEX_HOME`) writes `<dir>/config.toml`, `pi` and `omp`
+  `<dir>/.claude.json`, `codex` (`CODEX_HOME`) writes `<dir>/config.toml`, `opencode` (`OPENCODE_CONFIG_DIR`)
+  writes `<dir>/opencode.json`, `pi` and `omp`
   (`PI_CODING_AGENT_DIR`) write `<dir>/mcp.json`. Global scope only; a project
   uses the Agent's own name, and a project's off switch goes to every account that has the
   server.
-- Account shell overrides: when `CLAUDE_CONFIG_DIR`, `CODEX_HOME` or
+- Account shell overrides: when `CLAUDE_CONFIG_DIR`, `CODEX_HOME`, `OPENCODE_CONFIG_DIR` or
   `PI_CODING_AGENT_DIR` matches a declared account's `config_dir`, the plain Agent
   uses its default home and sync warns. Unrelated overrides are still honored.
   Existing directory aliases, including symlinks and filesystem case aliases, match.
