@@ -6,6 +6,11 @@
       "tracked": true,
       "branch": "main"
     },
+    "_humanlayer-skills": {
+      "source": "https://github.com/humanlayer/skills.git",
+      "tracked": true,
+      "branch": "main"
+    },
     "_kotlin-kotlin-agent-skills": {
       "source": "https://github.com/kotlin/kotlin-agent-skills.git",
       "tracked": true,
