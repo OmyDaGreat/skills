@@ -63,7 +63,12 @@ skillshare mcp serve --check [--target NAME]         # List skipped, editable an
   again. Without `--live` the pins are untouched.
 - `mcp serve` serves skills to Agents that cannot reach the synced folders (VMs, MCP
   gateways): stdio by default, global unless `-p`. `--target NAME` applies that target's
-  filters. Skipped skills (`SKILL.md` a link or not starting with frontmatter, name not matching
+  filters. `resources/list` lists served `SKILL.md` files with frontmatter name and description.
+  `directoryRead: true` enables `resources/directory/read` (`uri`, optional `cursor`):
+  direct children in `resources`, including empty directories (`inode/directory`).
+  Directory URIs have no trailing slash; unknown directories and files return `-32602`.
+  Both listings return at most 100 resources in URI order; continue with `nextCursor` as `cursor`.
+  Skipped skills (`SKILL.md` a link or not starting with frontmatter, name not matching
   its directory, description missing or over 1,024 characters, compatibility empty or over 500, over 512 files/16 MiB) are
   listed on stderr; `--check` lists them without serving. `--http` on a non-loopback address requires `SKILLSHARE_MCP_TOKEN` and, by default, `--tls-cert`/`--tls-key` (or bind loopback behind a TLS proxy). On a trusted private network, explicitly opt in to plain HTTP with `--http-allow-insecure`; this logs a startup warning and still requires the token. Cross-origin browser requests to the MCP endpoint are refused.
   Do not connect local Agents that already sync skills; they would see each skill twice.
@@ -128,7 +133,7 @@ mcp:
 | `disabled` | `true` only, no connection fields, and a project must be in scope: project mode, or a root under `mcp.projects`. See [Turn off a global server in one project](#turn-off-a-global-server-in-one-project) |
 
 Client IDs: `claude`, `codex`, `cursor`, `vscode`, `opencode`, `kilocode`, `grok`,
-`antigravity`, `amp`, `claude-desktop`, `cline`, `copilot`, `factory`, `gemini`, `goose`,
+`antigravity`, `amp`, `claude-desktop`, `cline`, `copilot`, `factory`, `gemini`, `goose`, `hermes`,
 `junie`, `kiro`, `lmstudio`, `warp`, `windsurf`, `pi`, `omp`. `--target` and `--from` also take `agy` and
 `antigravity-cli` as `antigravity`. Scope and transport support vary by
 client; the website's MCP command reference lists every native destination and limit.
@@ -260,6 +265,26 @@ setups usually go wrong.
   as untrusted and drops the whole file if it contains an `{env:VARIABLE}` reference,
   so a server using `fromEnv` or `bearerToken` is refused for Kilo in project mode.
   Define it in global mode.
+
+### Hermes Agent
+
+- MCP target/import ID: `hermes`; global only. Writes named `mcp_servers` entries
+  in `~/.hermes/config.yaml` (`%LOCALAPPDATA%/hermes/config.yaml` on Windows).
+- An absolute `HERMES_HOME` selects another home/profile. Without it, use the
+  default profile; active-profile files, `--profile` and `HERMES_DATA_DIR_SUFFIX`
+  are not followed. No project MCP destination.
+- Stdio and Streamable HTTP use native `command`/`args`/`env` and `url`/`headers`.
+  `fromEnv` writes `${VAR}`; env/header import also accepts `${env:VAR}`.
+  SSE imports are blocked. Other unmapped native fields produce import warnings.
+- Set `options.hermes: {auth: oauth}` for OAuth. Import preserves `auth` and
+  `oauth` in `options.hermes`, rejecting literal credentials there; use
+  whole-value `${VAR}` references. Hermes owns login, `.env`, tokens and refresh:
+  complete `hermes mcp login NAME` in the same profile. Sync never copies these
+  files. Portable tool-policy gaps are reported; native filters can use options.
+- YAML edits keep unrelated settings, comments and unmanaged servers, but may
+  reformat the document. Aliases, merges, duplicate keys and multiple documents
+  block editing, as with Goose. Preview, ownership, backups and removal use the
+  shared MCP workflow.
 
 ### Pi
 
