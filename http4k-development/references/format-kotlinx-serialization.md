@@ -54,9 +54,32 @@ KotlinxSerialization {
 }
 ```
 
+## Explicit KSerializer Overloads
+
+When reified generics are unavailable (e.g., from Java, DI containers, or polymorphic serializers), use explicit `KSerializer<T>` overloads:
+
+```kotlin
+val serializer: KSerializer<MyType> = MyType.serializer()
+
+// Serialize to string or InputStream
+val str: String = KotlinxSerialization.asFormatString(serializer, myObj)
+val stream: InputStream = KotlinxSerialization.asInputStream(serializer, myObj)
+
+// Deserialize from string or InputStream
+val obj: MyType = KotlinxSerialization.asA(jsonString, serializer)
+val obj: MyType = KotlinxSerialization.asA(inputStream, serializer)
+
+// BiDiMapping for lens/param construction
+val mapping = KotlinxSerialization.asBiDiMapping(serializer)
+
+// HTTP body lens with explicit serializer
+val lens = KotlinxSerialization.autoBody<MyType>(serializer).toLens()
+```
+
 ## Gotchas
 
 - **`ignoreUnknownKeys = true` by default**: Unknown JSON fields are silently ignored in the default singleton.
 - **BigInteger not supported**: `bigInteger()` mappings throw `UnsupportedOperationException`. Use `long()` or `text()` for large integers.
 - **BigDecimal as string**: BigDecimal values are serialized as string content in `JsonPrimitive`, which may cause precision representation differences compared to Jackson/Gson.
 - **`@Serializable` annotation required**: Unlike reflection-based libraries (Jackson, Gson), kotlinx.serialization requires `@Serializable` on data classes for auto-marshalling.
+- **`parse` accepts top-level objects and arrays only**: `KotlinxSerialization.parse(...)` handles both `{...}` and `[...]` input. Any other top-level JSON value (e.g. a bare string or number) throws `SerializationException`.

@@ -10,7 +10,11 @@ Selenium WebDriver backed by an http4k `HttpHandler`. Test web UIs without start
 ## Construction
 
 ```kotlin
+// Default — no page runtime behaviour
 val driver = Http4kWebDriver(myApp)
+
+// With a PageBehaviour (e.g., for datastar or custom JS simulation)
+val driver = Http4kWebDriver(myApp, behaviour = myBehaviour)
 ```
 
 ## Navigation
@@ -67,6 +71,41 @@ driver.get("http://user:pass@example.com/page")
 // Subsequent form submissions include Authorization header
 ```
 
+## File Upload
+
+```kotlin
+// Single file
+driver.findElement(By.id("file-input")).sendKeys("/path/to/file.txt")
+
+// Multiple files — pass each path as a separate argument
+driver.findElement(By.id("multi-file-input")).sendKeys("/path/to/a.txt", "/path/to/b.txt")
+
+driver.findElement(By.tagName("button")).submit()
+```
+
+## PageBehaviour
+
+Extension point to hook page runtime behaviour into `Http4kWebDriver`. Implement to simulate a frontend framework or intercept element interactions.
+
+```kotlin
+interface PageBehaviour {
+    fun pageLoaded(document: Document) {}
+    fun beforeFind() {}                                 // called before element lookups (e.g. to apply pending updates)
+    fun pageSource(document: Document): String? = null  // override the reported page source
+    fun before(event: PageEvent, element: Element): Boolean = false  // return true to suppress default
+    fun after(event: PageEvent, element: Element) {}
+    fun displayed(element: Element): Boolean? = null  // null → throws FeatureNotImplementedYet
+
+    companion object {
+        val NoOp = object : PageBehaviour {}  // default — no-op
+    }
+}
+
+enum class PageEvent { Click, Submit, SendKeys, Clear }
+```
+
+`JSoupWebElement.isDisplayed()` delegates to `behaviour.displayed()`. Without a `PageBehaviour`, calling `isDisplayed` throws `FeatureNotImplementedYet`. See `http4k-testing-webdriver-datastar` for a full implementation.
+
 ## Gotchas
 
 - **No real browser**: Uses JSoup to parse HTML. No JavaScript execution.
@@ -77,3 +116,13 @@ driver.get("http://user:pass@example.com/page")
 - **NoSuchElementException includes selector**: Error messages include which `By` selector failed, making failures easier to diagnose.
 - **Basic auth from URL**: If the current page URL contains userinfo (`user:pass@`), the credentials are applied as Basic Auth headers on subsequent requests.
 - **formaction/formmethod**: Submit buttons with `formaction` or `formmethod` attributes override the parent form's `action` and `method`.
+
+A behaviour can be built from the browser's own handler, so any requests it makes carry the browser's cookies and resolve relative URLs against the current page (and its `<base href>`):
+
+```kotlin
+val driver = Http4kWebDriver(myApp, Clock.systemUTC()) { browserHandler ->
+    object : PageBehaviour {
+        override fun pageLoaded(document: Document) { browserHandler(Request(GET, "things/done")) }
+    }
+}
+```
